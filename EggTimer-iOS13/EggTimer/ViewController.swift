@@ -18,12 +18,18 @@ class ViewController: UIViewController {
     @IBAction func hardnessSelected(_ sender: UIButton) {
         let hardness = sender.currentTitle
         
-        if hardness == "Soft" {
-            print("\(softTime) minutes")
-        } else if hardness == "Medium" {
-            print("\(mediumTime) minutes")
-        } else {
-            print("\(hardTime) minutes")
+//        if hardness == "Soft" {
+//            print("\(softTime) minutes")
+//        } else if hardness == "Medium" {
+//            print("\(mediumTime) minutes")
+//        } else {
+//            print("\(hardTime) minutes")
+//        }
+        
+        switch hardness {
+        case "Soft": print("\(softTime) minutes")
+        case "Medium": print("\(mediumTime) minutes")
+        default: print("\(hardTime) minutes")
         }
     }
     
