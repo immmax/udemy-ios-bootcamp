@@ -14,17 +14,21 @@ class ViewController: UIViewController {
     var countdown = 0
     var timer = Timer()
     
+    @IBOutlet weak var topLabel: UILabel!
+    
     @IBAction func hardnessSelected(_ sender: UIButton) {
         timer.invalidate()
         
-        default: print("\(hardTime) minutes")
         if let hardness = sender.currentTitle {
+            self.topLabel.text = "Wait!"
             countdown = eggTimes[hardness] ?? 0
             
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 if self.countdown > 0 {
+                    self.countdown -= 1
                 } else {
                     timer.invalidate()
+                    self.topLabel.text = "Done!"
                 }
             }
         }
