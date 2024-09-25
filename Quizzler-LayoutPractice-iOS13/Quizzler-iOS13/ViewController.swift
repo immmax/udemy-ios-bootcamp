@@ -8,18 +8,24 @@
 
 import UIKit
 
+struct Question {
+    let id = UUID()
+    let title: String
+    let answer: String
+    
+    static let quiz = [
+        Question(title: "Four + Two is equal to Six.", answer: "True"),
+        Question(title: "Five - Three is greater than One.", answer: "True"),
+        Question(title: "Three + Eight is less than Ten.", answer: "False")
+    ]
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
-    
-    let quiz = [
-        "Four + Two is equal to Six.",
-        "Five - Three is greater than One.",
-        "Three + Eight is less than Ten."
-    ]
     
     var questionNumber = 0
     
@@ -31,14 +37,26 @@ class ViewController: UIViewController {
 
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        if questionNumber < quiz.count - 1 {
-            questionNumber += 1
+        let userAnswer = sender.currentTitle!
+        
+        if userAnswer == Question.quiz[questionNumber].answer {
+            print("✅ The answer is Right!")
+        } else {
+            print("❌ The answer is Wrong!")
         }
+        
+        if questionNumber < Question.quiz.count - 1 {
+            questionNumber += 1
+        } else {
+            print("You have answered all questions!")
+            questionNumber = 0
+        }
+        
         updateUI()
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber]
+        questionLabel.text = Question.quiz[questionNumber].title
     }
 }
 
