@@ -13,17 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+    
+    @IBOutlet weak var answer1Button: UIButton!
+    @IBOutlet weak var answer2Button: UIButton!
+    @IBOutlet weak var answer3Button: UIButton!
     
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 4)
         progressBar.layer.cornerRadius = 14
         progressBar.clipsToBounds = true
         progressBar.progress = 0.0
+        
         updateUI()
     }
 
@@ -43,21 +47,31 @@ class ViewController: UIViewController {
     
     func updateUI() {
         progressBar.progress = quizBrain.getProgress()
+        scoreLabel.text = "Score: \(quizBrain.getScore()) / \(quizBrain.quiz.count)"
+        
         questionLabel.text = quizBrain.getQuestionText()
-        scoreLabel.text = "Score: \(quizBrain.getScore())"
-        trueButton.backgroundColor = .clear
-        falseButton.backgroundColor = .clear
+        
+        answer1Button.setTitle(quizBrain.getAnswer(number: 1), for: .normal)
+        answer2Button.setTitle(quizBrain.getAnswer(number: 2), for: .normal)
+        answer3Button.setTitle(quizBrain.getAnswer(number: 3), for: .normal)
+        
+        answer1Button.backgroundColor = .clear
+        answer2Button.backgroundColor = .clear
+        answer3Button.backgroundColor = .clear
+        
         enableButtons()
     }
     
     func disableButtons() {
-        trueButton.isEnabled = false
-        falseButton.isEnabled = false
+        answer1Button.isEnabled = false
+        answer2Button.isEnabled = false
+        answer3Button.isEnabled = false
     }
     
     func enableButtons() {
-        trueButton.isEnabled = true
-        falseButton.isEnabled = true
+        answer1Button.isEnabled = true
+        answer2Button.isEnabled = true
+        answer3Button.isEnabled = true
     }
 }
 
