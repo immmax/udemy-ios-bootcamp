@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,16 +19,22 @@
                                 <rect key="frame" x="0.0" y="830" width="430" height="102"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="i3i-Xe-7Wk">
-                                <rect key="frame" x="15" y="0.0" width="400" height="898"/>
+                                <rect key="frame" x="15" y="59" width="400" height="839"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO2-lX-imE">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="666.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="62.333333333333314" width="400" height="545"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cuV-TE-bwD">
-                                        <rect key="frame" x="0.0" y="708.33333333333337" width="400" height="146"/>
+                                        <rect key="frame" x="0.0" y="649.33333333333337" width="400" height="146"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="68"/>
@@ -56,7 +61,7 @@
                                         </subviews>
                                     </stackView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-qh-7Xg">
-                                        <rect key="frame" x="0.0" y="896.33333333333337" width="400" height="2.6666666666666288"/>
+                                        <rect key="frame" x="0.0" y="837.33333333333337" width="400" height="2.6666666666666288"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.2770131528" green="0.3800790906" blue="0.57570761439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="progressTintColor" red="1" green="0.45854175089999999" blue="0.6605013609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,9 +69,9 @@
                                     </progressView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="TXm-qh-7Xg" secondAttribute="bottom" id="3Dn-8D-YTj"/>
-                                    <constraint firstAttribute="bottom" secondItem="TXm-qh-7Xg" secondAttribute="bottom" id="Bsh-x7-tcC"/>
-                                    <constraint firstAttribute="trailing" secondItem="TXm-qh-7Xg" secondAttribute="trailing" id="Gpp-ff-qSh"/>
+                                    <constraint firstItem="TXm-qh-7Xg" firstAttribute="bottom" secondItem="i3i-Xe-7Wk" secondAttribute="bottom" id="3Dn-8D-YTj"/>
+                                    <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="cuV-TE-bwD" secondAttribute="bottom" constant="42" id="Bsh-x7-tcC"/>
+                                    <constraint firstItem="TXm-qh-7Xg" firstAttribute="trailing" secondItem="i3i-Xe-7Wk" secondAttribute="trailing" id="Gpp-ff-qSh"/>
                                     <constraint firstItem="TXm-qh-7Xg" firstAttribute="leading" secondItem="i3i-Xe-7Wk" secondAttribute="leading" id="pTL-FT-AbP"/>
                                 </constraints>
                             </stackView>
@@ -77,7 +82,7 @@
                             <constraint firstItem="i3i-Xe-7Wk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="3qY-Uw-c1u"/>
                             <constraint firstAttribute="trailing" secondItem="i3i-Xe-7Wk" secondAttribute="trailing" constant="15" id="7oa-hZ-VWS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i3i-Xe-7Wk" secondAttribute="bottom" id="Jfn-FA-rca"/>
-                            <constraint firstItem="i3i-Xe-7Wk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jel-Vn-UNP"/>
+                            <constraint firstItem="i3i-Xe-7Wk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jel-Vn-UNP"/>
                             <constraint firstAttribute="bottom" secondItem="eGL-jB-Wwb" secondAttribute="bottom" id="p9z-TL-P2F"/>
                             <constraint firstItem="eGL-jB-Wwb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zhf-ya-sel"/>
                             <constraint firstAttribute="trailing" secondItem="eGL-jB-Wwb" secondAttribute="trailing" id="zsJ-Be-hiC"/>
@@ -87,6 +92,7 @@
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="WdN-Ch-8TA"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="qBH-WZ-VuC"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="htQ-GQ-shn"/>
+                        <outlet property="scoreLabel" destination="RO2-lX-imE" id="B5y-rb-MY1"/>
                         <outlet property="trueButton" destination="oVw-Hl-IRe" id="YeQ-T2-yZN"/>
                     </connections>
                 </viewController>
